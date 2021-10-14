@@ -5,6 +5,27 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jlw.Extensions.SiteConfiguration", "Jlw.Extensions.SiteConfiguration\Jlw.Extensions.SiteConfiguration.csproj", "{1D12AC1C-9135-4ADB-999D-EACB890F5DFA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build-scripts", "build-scripts", "{655CFE71-4A89-4DF7-A576-6A43BB723E8D}"
+	ProjectSection(SolutionItems) = preProject
+		build-scripts\build-test.ps1 = build-scripts\build-test.ps1
+		build-scripts\build-wiki.ps1 = build-scripts\build-wiki.ps1
+		build-scripts\build-wiki.sh = build-scripts\build-wiki.sh
+		build-scripts\build.ps1 = build-scripts\build.ps1
+		build-scripts\deploy.sh = build-scripts\deploy.sh
+		build-scripts\setenv.ps1 = build-scripts\setenv.ps1
+		build-scripts\setenv.sh = build-scripts\setenv.sh
+		build-scripts\test.ps1 = build-scripts\test.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GithubWorkflows", "GithubWorkflows", "{11F85376-0688-4C2C-955D-D9A163A91D37}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-deploy-alpha.yml = .github\workflows\build-deploy-alpha.yml
+		.github\workflows\build-test.yml = .github\workflows\build-test.yml
+		.github\workflows\cron-artifact-cleanup.yml = .github\workflows\cron-artifact-cleanup.yml
+		.github\workflows\GenerateRelease.yml = .github\workflows\GenerateRelease.yml
+		.github\workflows\sonnarbuild.yml = .github\workflows\sonnarbuild.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
