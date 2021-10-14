@@ -15,7 +15,7 @@ jobs:
         ./build-scripts/setenv.ps1
     - name: Run build script
       run: |
-        ./build-scripts/build.ps1 "Jlw.Extensions.SiteConfiguration" "Release" "-alpha"
+        ./build-scripts/build.ps1 "${{ env.PKGNAME }}" "Release" "-alpha"
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ env.PKGNAME }}
@@ -39,7 +39,7 @@ jobs:
         name: ${{ env.PKGNAME }}
     - name: Run Tests
       run: |
-        ./build-scripts/test.ps1 "Jlw.Extensions.SiteConfiguration.Tests" "Release"
+        ./build-scripts/test.ps1 "${{ env.PKGNAME }}.Tests" "Release"
 
   deploy:
     needs: test

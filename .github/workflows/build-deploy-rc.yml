@@ -15,7 +15,7 @@ jobs:
         ./build-scripts/setenv.ps1
     - name: Run build script
       run: |
-        ./build-scripts/build.ps1 "Jlw.Data.LocalizedContent" "Release" "-rc"
+        ./build-scripts/build.ps1 "Jlw.Extensions.SiteConfiguration" "Release" "-rc"
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ env.PKGNAME }}

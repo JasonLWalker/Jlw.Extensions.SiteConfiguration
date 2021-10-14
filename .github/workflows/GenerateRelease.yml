@@ -27,7 +27,7 @@ jobs:
     - name: Get Package Info
       run: |
         export PKG_NAME="$(pwd | sed 's/.*\/\([^\/]*\)$/\1/')"
-        export PKG_VERSION="$(echo `ls /home/runner/work/Jlw.Standard.Utilities.Data/Jlw.Standard.Utilities.Data/Jlw.Standard.Utilities.Data/bin/Release/*.nupkg` | sed 's/[^0-9]*\([0-9.a-z\-]*\)\.nupkg/v\1/')"
+        export PKG_VERSION="$(echo `ls /home/runner/work/Jlw.Extensions.SiteConfiguration/Jlw.Extensions.SiteConfiguration/Jlw.Extensions.SiteConfiguration/bin/Release/*.nupkg` | sed 's/[^0-9]*\([0-9.a-z\-]*\)\.nupkg/v\1/')"
         echo "::set-env name=PKGNAME::$PKG_NAME"        
         echo "::set-env name=PKGVERSION::$PKG_VERSION"        
     #- name: Test Env

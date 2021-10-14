@@ -7,7 +7,7 @@ on:
   workflow_dispatch:    # Run on demand
 
 env:
-  PACKAGE_NAME: "Jlw.Data.LocalizedContent"
+  PACKAGE_NAME: "Jlw.Extensions.SiteConfiguration"
   BUILD_TYPE: "Release"
 jobs:
   build-wiki:
