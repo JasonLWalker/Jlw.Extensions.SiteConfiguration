@@ -1,0 +1,20 @@
+name: Build and Deploy Wiki
+
+on:
+  push:
+    branches:           # Automatically run when pushing only to main branch
+      [ main ]
+  workflow_dispatch:    # Run on demand
+
+env:
+  PACKAGE_NAME: "Jlw.Data.LocalizedContent"
+  BUILD_TYPE: "Release"
+jobs:
+  build-wiki:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Run build script
+      run: |
+        /bin/bash ./build-scripts/build-wiki.sh -p ${{ env.PACKAGE_NAME }} -b ${{ env.BUILD_TYPE }} -u ${{ secrets.NUGET_USER }} -e ${{ secrets.GPR_EMAIL }} -t ${{ secrets.GITHUB_TOKEN }}

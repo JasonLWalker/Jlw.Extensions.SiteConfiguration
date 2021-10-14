@@ -1,7 +1,45 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Jlw.Extensions.SiteConfiguration</Product>
+    <PackageId>$(Product)</PackageId>
+    <RepositoryUrl>https://github.com/JasonLWalker/Jlw.Extensions.SiteConfiguration</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+    <IsPackable>True</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>$(PackageId)</AssemblyName>
+    <RootNamespace>$(PackageId)</RootNamespace>
+    <Company>Jason L. Walker</Company>
+    <Authors>$(Company)</Authors>
+    <Description></Description>
+    <Copyright>Copyright ©2020-2021 $(Company)</Copyright>
+    <VersionPrefix Condition="'$(VersionPrefix)' == ''">0.0.0.1</VersionPrefix>
+    <Version Condition="'$(Version)' == ''">$(VersionPrefix)$(VersionSuffix)</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DebugSymbols>true</DebugSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
+    <DebugType>portable</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="..\key.snk" Link="key.snk" />
+  </ItemGroup>
 
 </Project>
